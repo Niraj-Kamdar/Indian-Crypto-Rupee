@@ -1,0 +1,47 @@
+* ***REMOVED***
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+***REMOVED***
+  .color-1 ***REMOVED***
+    color: #48494b;
+***REMOVED***
+  .color-2 ***REMOVED***
+    color: #808588;
+***REMOVED***
+  .bg-1 ***REMOVED***
+    background-color: #48494b;
+    color: white;
+***REMOVED***
+  .bg-2 ***REMOVED***
+    background-color: #808588;
+    color: white;
+***REMOVED***
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 ***REMOVED***
+    margin: 0px;
+***REMOVED***
+  .btn-new ***REMOVED***
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 30px;
+***REMOVED***
+  .btn-new:hover ***REMOVED***
+    outline: none;
+***REMOVED***
+  .btn-new:focus ***REMOVED***
+    outline: none;
+***REMOVED***
+  a ***REMOVED***
+    text-decoration: none;
+***REMOVED***
+  a:hover ***REMOVED***
+    text-decoration: none;
+***REMOVED***
+  
