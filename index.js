@@ -14,12 +14,17 @@ const register = require("./routes/register");
 const login = require("./routes/login");
 const dashboard = require("./routes/dashboard");
 const logout = require("./routes/logout");
+const addmoney = require("./routes/addmoney");
+const getmoney = require("./routes/getmoney");
+
 const User = require("./models/user");
 
 app.use("/register", register);
 app.use("/login", login);
 app.use("/dashboard", dashboard);
 app.use("/logout", logout);
+app.use("/addmoney", addmoney);
+app.use("/getmoney", getmoney);
 
 const checkUser = (req, res, next) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;

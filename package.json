@@ -9,7 +9,9 @@
     "ejs": "^3.0.1",
     "ethereumjs-tx": "^2.1.2",
     "express": "^4.17.1",
+    "googleapis": "^47.0.0",
     "mongoose": "^5.8.11",
+    "nodemailer": "^6.4.2",
     "truffle": "^5.1.12",
     "web3": "^1.2.6"
 ***REMOVED***

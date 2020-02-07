@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/user");
-<<<<<<< HEAD
+const Web3 = require("web3");
+const web3 = new Web3("HTTP://127.0.0.1:7545");
 
 const checkUser = (req, res, next) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
@@ -18,11 +19,6 @@ const checkUser = (req, res, next) => ***REMOVED***
 ***REMOVED***;
 
 router.get("/", checkUser, (req, res) => ***REMOVED***
-=======
-const Web3 = require("web3");
-const web3 = new Web3("HTTP://127.0.0.1:7545");
-router.get("/", (req, res) => ***REMOVED***
->>>>>>> 3ca04edd0e1f510960326fa4b7d6e770c8cbf3bf
   res.render("register", ***REMOVED*** error: null ***REMOVED***);
 ***REMOVED***);
 
