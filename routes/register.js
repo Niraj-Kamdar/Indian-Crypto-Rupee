@@ -16,11 +16,9 @@ router.post("/", (req, res) => ***REMOVED***
 ***REMOVED***);
   user
     .save()
-    .then((err, docs) => ***REMOVED***
-      if (err) ***REMOVED***
-        return res.send(err);
-    ***REMOVED***
+    .then(docs => ***REMOVED***
       res.cookie(`UserToken`, docs._id);
+      console.log("Saved");
       return res.redirect("/dashboard");
   ***REMOVED***)
     .catch(err => ***REMOVED***

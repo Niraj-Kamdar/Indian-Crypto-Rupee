@@ -1,0 +1,27 @@
+***REMOVED***
+  "name": "hack-infinity",
+  "version": "1.0.0",
+  "description": "HI2020",
+  "main": "index.js",
+  "dependencies": ***REMOVED***
+    "config": "^3.2.5",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.11"
+***REMOVED***
+  "devDependencies": ***REMOVED******REMOVED***,
+  "scripts": ***REMOVED***
+    "test": "echo \"Error: no test specified\" && exit 1"
+***REMOVED***
+  "repository": ***REMOVED***
+    "type": "git",
+    "url": "git+https://github.com/meet2410shah/hack-infinity.git"
+***REMOVED***
+  "author": "",
+  "license": "ISC",
+  "bugs": ***REMOVED***
+    "url": "https://github.com/meet2410shah/hack-infinity/issues"
+***REMOVED***
+  "homepage": "https://github.com/meet2410shah/hack-infinity#readme"
+***REMOVED***
