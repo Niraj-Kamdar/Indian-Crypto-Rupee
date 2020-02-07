@@ -16,7 +16,7 @@
   <body>
     <div>
       <h1 class="bg-1 p-4" style="background-color: #303030; height: 15vh;">
-        Welcome, Meet Shah
+        Welcome, <%= user.name %>
       </h1>
       <div class="container-fluid">
         <div class="row" style="height: 85vh">
@@ -46,7 +46,7 @@
               class="bg-2"
               style="padding: 5px; text-align: right; border-radius: 25px;"
             >
-              <h3 class="pl-3">230.00 ₹</h3>
+              <h3 class="pl-3"><%= user.balance %></h3>
             </div>
             <br />
             <form

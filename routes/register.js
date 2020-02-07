@@ -18,7 +18,6 @@ router.post("/", (req, res) => ***REMOVED***
     .save()
     .then(docs => ***REMOVED***
       res.cookie(`UserToken`, docs._id);
-      console.log("Saved");
       return res.redirect("/dashboard");
   ***REMOVED***)
     .catch(err => ***REMOVED***
