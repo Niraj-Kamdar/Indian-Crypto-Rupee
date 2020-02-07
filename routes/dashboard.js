@@ -16,8 +16,9 @@ const checkUser = (req, res, next) => ***REMOVED***
 ***REMOVED***;
 
 router.get("/", checkUser, (req, res) => ***REMOVED***
+  res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
   const ***REMOVED*** user ***REMOVED*** = res.locals;
-  return res.render("dashboard", user);
+  return res.render("dashboard", ***REMOVED*** user ***REMOVED***);
 ***REMOVED***);
 
 module.exports = router;

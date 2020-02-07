@@ -20,7 +20,7 @@
       </h1>
       <div class="container-fluid">
         <div class="row" style="height: 85vh">
-          <div class="col-md-10 bg-2">
+          <div class="col-md-8 bg-2">
             <p class="p-3">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
               temporibus hic nihil quasi minus eos assumenda, quia debitis unde
@@ -38,7 +38,7 @@
             </p>
             <button class="btn-new bg-1 mb-4">Start Investment</button>
           </div>
-          <div class="col-md-2 bg-1">
+          <div class="col-md-4 bg-1">
             <div class="bg-1" style="padding: 5px; text-align: right;">
               <h2 class="pl-3 pt-3">Balance</h2>
             </div>
@@ -46,7 +46,7 @@
               class="bg-2"
               style="padding: 5px; text-align: right; border-radius: 25px;"
             >
-              <h3 class="pl-3"><%= user.balance %></h3>
+              <h3 class="pl-3"><%= user.balance %> ₹</h3>
             </div>
             <br />
             <form
@@ -61,6 +61,9 @@
               <br />
               <br />
               <button class="btn-new bg-2 mb-2">Add Money</button>
+            </form>
+            <form action="/logout" method="POST">
+              <button class="btn-new bg-2 mb-2">Log out</button>
             </form>
           </div>
         </div>

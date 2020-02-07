@@ -15,26 +15,31 @@
   </head>
   <body>
     <div>
-      <h1 class="bg-1 p-4" style="background-color: #303030; height: 15vh;">
-        Indian Crypto Rupee
-      </h1>
+      <div class="d-flex" style="background-color: #303030; padding-left: 40px; padding-top: 10px; padding-bottom: 10px;">
+        <img src="./ICR.svg" alt="" height="99vh" style="background-color: white;">
+        <h1 class="bg-1 p-4" style="background-color: #303030; height: 15vh; width: 100%;">
+          Indian Crypto Rupee
+        </h1>
+      </div>
       <div class="container-fluid bg-1" style="height: 85vh;">
         <br />
         <br />
         <div class="row">
-          <div class="col-md-12">
-            <label for="username">Username :</label>
-            <br />
-            <input type="text" name="username" class="btn-new bg-2" />
-            <br />
-            <br />
-            <label for="password">Password :</label>
-            <br />
-            <input type="password" name="password" class="btn-new bg-2" />
-            <br />
-            <br />
-          </div>
-          <button class="btn-new bg-2 mb-2">Go to Dashboard</button>
+          <form action="/login" method="POST">
+            <div class="col-md-12">
+              <label for="username">Username :</label>
+              <br />
+              <input type="text" name="username" class="btn-new bg-2" />
+              <br />
+              <br />
+              <label for="password">Password :</label>
+              <br />
+              <input type="password" name="password" class="btn-new bg-2" />
+              <br />
+              <br />
+            </div>
+            <button class="btn-new bg-2 mb-2">Go to Dashboard</button>
+          </form>
         </div>
       </form>
       </div>

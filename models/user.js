@@ -8,7 +8,7 @@ const userSchema = new Schema(***REMOVED***
   username: ***REMOVED*** type: String, unique: true ***REMOVED***,
   password: String,
   mobile: Number,
-  balance: ***REMOVED*** type: Number, unique: true ***REMOVED***,
+  balance: ***REMOVED*** type: Number, default: 0.0 ***REMOVED***,
   data: String
 ***REMOVED***);
 
