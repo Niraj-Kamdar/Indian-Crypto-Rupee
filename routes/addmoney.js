@@ -128,9 +128,9 @@ router.post("/success", (req, res) => ***REMOVED***
     paytmChecksum
   );
   if (isValidChecksum || STATUS == "TXN_SUCCESS") ***REMOVED***
-    res.render("success");
+    return res.render("success");
 ***REMOVED*** else ***REMOVED***
-    res.redirect("/dashboard");
+    return res.redirect("/dashboard");
 ***REMOVED***
 ***REMOVED***);
 
