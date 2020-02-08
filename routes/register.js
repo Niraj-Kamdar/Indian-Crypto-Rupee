@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user");
 
 const ***REMOVED*** web3Controls ***REMOVED*** = require("../ethereumControls/web3");
-
+const web3 = web3Controls.web3;
 const checkUser = (req, res, next) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
   if (!UserToken) ***REMOVED***

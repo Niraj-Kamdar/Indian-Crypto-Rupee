@@ -8,6 +8,7 @@ const URL = config.get(`SERVER.URL`);
 const MID = config.get("PAYMENT.MID");
 const MKEY = config.get("PAYMENT.MKEY");
 const ***REMOVED*** web3Controls ***REMOVED*** = require("../ethereumControls/web3");
+const web3 = web3Controls.web3;
 router.post("/", (req, res) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
   User.findById(UserToken, (err, docs) => ***REMOVED***
