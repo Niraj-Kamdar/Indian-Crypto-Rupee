@@ -1,47 +1,49 @@
 * ***REMOVED***
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 ***REMOVED***
-  .color-1 ***REMOVED***
-    color: #48494b;
+.color-1 ***REMOVED***
+  color: #48494b;
 ***REMOVED***
-  .color-2 ***REMOVED***
-    color: #808588;
+.color-2 ***REMOVED***
+  color: #9f9f9f;
 ***REMOVED***
-  .bg-1 ***REMOVED***
-    background-color: #48494b;
-    color: white;
+.bg-1 ***REMOVED***
+  background-color: #48494b;
+  color: white;
 ***REMOVED***
-  .bg-2 ***REMOVED***
-    background-color: #808588;
-    color: white;
+.bg-2 ***REMOVED***
+  background-color: #9f9f9f;
+  color: white;
 ***REMOVED***
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 ***REMOVED***
-    margin: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 ***REMOVED***
+  margin: 0px;
 ***REMOVED***
-  .btn-new ***REMOVED***
-    padding: 15px 25px;
-    border: none;
-    outline: none;
-    width: 100%;
-    border-radius: 30px;
+.btn-new ***REMOVED***
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 30px;
 ***REMOVED***
-  .btn-new:hover ***REMOVED***
-    outline: none;
+.btn-new:hover ***REMOVED***
+  outline: none;
 ***REMOVED***
-  .btn-new:focus ***REMOVED***
-    outline: none;
+.btn-new:focus ***REMOVED***
+  outline: none;
 ***REMOVED***
-  a ***REMOVED***
-    text-decoration: none;
+a ***REMOVED***
+  text-decoration: none;
 ***REMOVED***
-  a:hover ***REMOVED***
-    text-decoration: none;
+a:hover ***REMOVED***
+  text-decoration: none;
 ***REMOVED***
-  
+input::placeholder ***REMOVED***
+  color: white;
+***REMOVED***

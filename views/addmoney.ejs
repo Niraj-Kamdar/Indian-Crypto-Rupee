@@ -49,13 +49,35 @@
             >
               <h3><%= user.balance %> ₹</h3>
             </div>
-            <br />
+            <form
+              action="/addmoney"
+              method="POST"
+              class="pl-4"
+              style="color: white;"
+            >
+              <label for="addmoney">Add Amount (In ₹) :</label>
+              <br />
+              <input
+                type="number"
+                name="addmoney"
+                class="btn-new bg-2"
+                required
+              />
+              <br />
+              <br />
+              <button
+                class="btn-new bg-2 mb-2"
+                style="width: 250px; background-color: #303030;"
+              >
+                Add Money
+              </button>
+            </form>
             <a
-              href="/dashboard/add-money"
+              href="/dashboard"
               class="btn-new bg-2 ml-4"
               style="width: 250px; background-color: #303030; display: block;"
             >
-              Add Money
+              Home
             </a>
             <br />
             <a
@@ -73,7 +95,6 @@
             >
               Transfer Money
             </a>
-            <br />
             <form action="/logout" method="POST" class="pl-4">
               <button class="btn-new bg-2 mb-2">Log out</button>
             </form>

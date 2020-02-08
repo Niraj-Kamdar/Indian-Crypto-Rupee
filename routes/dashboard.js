@@ -21,4 +21,22 @@ router.get("/", checkUser, (req, res) => ***REMOVED***
   return res.render("dashboard", ***REMOVED*** user ***REMOVED***);
 ***REMOVED***);
 
+router.get("/transfer", checkUser, (req, res) => ***REMOVED***
+  res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
+  const ***REMOVED*** user ***REMOVED*** = res.locals;
+  return res.render("transfer", ***REMOVED*** user ***REMOVED***);
+***REMOVED***);
+
+router.get("/get-money", checkUser, (req, res) => ***REMOVED***
+  res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
+  const ***REMOVED*** user ***REMOVED*** = res.locals;
+  return res.render("getmoney", ***REMOVED*** user ***REMOVED***);
+***REMOVED***);
+
+router.get("/add-money", checkUser, (req, res) => ***REMOVED***
+  res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
+  const ***REMOVED*** user ***REMOVED*** = res.locals;
+  return res.render("addmoney", ***REMOVED*** user ***REMOVED***);
+***REMOVED***);
+
 module.exports = router;

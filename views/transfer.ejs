@@ -49,6 +49,30 @@
             >
               <h3><%= user.balance %> ₹</h3>
             </div>
+            <h3 class="p-4">TRANSFER TO A USER</h3>
+            <form action="/transfer" method="POST" class="pl-4">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                class="btn-new bg-2"
+                placeholder="Username where you want to send money"
+              />
+              <br />
+              <br />
+              <label for="amount">Amount</label>
+              <input type="number" name="amount" class="btn-new bg-2" />
+              <br />
+              <br />
+              <button class="btn-new bg-2 mb-2">Transfer</button>
+            </form>
+            <a
+              href="/dashboard"
+              class="btn-new bg-2 ml-4"
+              style="width: 250px; background-color: #303030; display: block;"
+            >
+              Home
+            </a>
             <br />
             <a
               href="/dashboard/add-money"
@@ -64,14 +88,6 @@
               style="width: 250px; background-color: #303030; display: block;"
             >
               Get Money
-            </a>
-            <br />
-            <a
-              href="/dashboard/transfer"
-              class="btn-new bg-2 ml-4"
-              style="width: 250px; background-color: #303030; display: block;"
-            >
-              Transfer Money
             </a>
             <br />
             <form action="/logout" method="POST" class="pl-4">
