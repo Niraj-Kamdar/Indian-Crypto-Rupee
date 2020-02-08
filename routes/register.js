@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/user");
 
+const ***REMOVED*** web3Controls ***REMOVED*** = require("../ethereumControls/web3");
+
 const checkUser = (req, res, next) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
   if (!UserToken) ***REMOVED***
@@ -33,6 +35,7 @@ router.post("/", checkUser, (req, res) => ***REMOVED***
   const data = JSON.stringify(
     web3.eth.accounts.encrypt(privateKey, username + password)
   );
+  web3Controls.addUser(web3Controls.acc, publicKey);
   const user = new User(***REMOVED***
     name,
     email,

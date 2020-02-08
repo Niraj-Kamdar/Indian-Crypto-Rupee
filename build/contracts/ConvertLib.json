@@ -1,0 +1,467 @@
+***REMOVED***
+  "contractName": "ConvertLib",
+  "abi": [
+    ***REMOVED***
+      "constant": true,
+      "inputs": [
+        ***REMOVED***
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+    ***REMOVED***
+        ***REMOVED***
+          "internalType": "uint256",
+          "name": "conversionRate",
+          "type": "uint256"
+      ***REMOVED***
+      ],
+      "name": "convert",
+      "outputs": [
+        ***REMOVED***
+          "internalType": "uint256",
+          "name": "convertedAmount",
+          "type": "uint256"
+      ***REMOVED***
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+  ***REMOVED***
+  ],
+  "metadata": "***REMOVED***\"compiler\":***REMOVED***\"version\":\"0.5.16+commit.9c3226ce\"***REMOVED***,\"language\":\"Solidity\",\"output\":***REMOVED***\"abi\":[***REMOVED***\"constant\":true,\"inputs\":[***REMOVED***\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"***REMOVED***,***REMOVED***\"internalType\":\"uint256\",\"name\":\"conversionRate\",\"type\":\"uint256\"***REMOVED***],\"name\":\"convert\",\"outputs\":[***REMOVED***\"internalType\":\"uint256\",\"name\":\"convertedAmount\",\"type\":\"uint256\"***REMOVED***],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"***REMOVED***],\"devdoc\":***REMOVED***\"methods\":***REMOVED******REMOVED******REMOVED***,\"userdoc\":***REMOVED***\"methods\":***REMOVED******REMOVED******REMOVED******REMOVED***,\"settings\":***REMOVED***\"compilationTarget\":***REMOVED***\"/C/Users/vatsal/Desktop/hackinfinity/hack-infinity/contracts/ConvertLib.sol\":\"ConvertLib\"***REMOVED***,\"evmVersion\":\"istanbul\",\"libraries\":***REMOVED******REMOVED***,\"optimizer\":***REMOVED***\"enabled\":true,\"runs\":200***REMOVED***,\"remappings\":[]***REMOVED***,\"sources\":***REMOVED***\"/C/Users/vatsal/Desktop/hackinfinity/hack-infinity/contracts/ConvertLib.sol\":***REMOVED***\"keccak256\":\"0x10e20a172b452fece152e14fa48ea45568608d7e4a6b44b976a4fbce01a438a4\",\"urls\":[\"bzz-raw://5a95a5b9dff8d7efa9155ff2572da99910800bd2b19c383316a6ecc6bc000282\",\"dweb:/ipfs/QmcGD9ynJr3fzYTdNoNygWzDBZEedeX3GUqmaEAi4Jrp6o\"]***REMOVED******REMOVED***,\"version\":1***REMOVED***",
+  "bytecode": "0x60a3610024600b82828239805160001a607314601757fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c806396e4ee3d146038575b600080fd5b605860048036036040811015604c57600080fd5b5080359060200135606a565b60408051918252519081900360200190f35b029056fea265627a7a72315820335cbda769a2e119f0e6c2ccce5a8c93e09545b6c8f3cf5fada74c3fa383da2b64736f6c63430005100032",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c806396e4ee3d146038575b600080fd5b605860048036036040811015604c57600080fd5b5080359060200135606a565b60408051918252519081900360200190f35b029056fea265627a7a72315820335cbda769a2e119f0e6c2ccce5a8c93e09545b6c8f3cf5fada74c3fa383da2b64736f6c63430005100032",
+  "sourceMap": "34:155:0:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "34:155:0:-;;;;;;;;;;;;;;;;;;;;;;;;55:132;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;55:132:0;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;160:23;;55:132::o",
+  "source": "pragma solidity >=0.4.22 <0.7.0;\n\nlibrary ConvertLib***REMOVED***\n\tfunction convert(uint amount,uint conversionRate) public pure returns (uint convertedAmount)\n\t***REMOVED***\n\t\treturn amount * conversionRate;\n\t***REMOVED***\n***REMOVED***\n",
+  "sourcePath": "C:\\Users\\vatsal\\Desktop\\hackinfinity\\hack-infinity\\contracts\\ConvertLib.sol",
+  "ast": ***REMOVED***
+    "absolutePath": "/C/Users/vatsal/Desktop/hackinfinity/hack-infinity/contracts/ConvertLib.sol",
+    "exportedSymbols": ***REMOVED***
+      "ConvertLib": [
+        16
+      ]
+***REMOVED***
+    "id": 17,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      ***REMOVED***
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+  ***REMOVED***
+      ***REMOVED***
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 16,
+        "linearizedBaseContracts": [
+          16
+        ],
+        "name": "ConvertLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          ***REMOVED***
+            "body": ***REMOVED***
+              "id": 14,
+              "nodeType": "Block",
+              "src": "149:38:0",
+              "statements": [
+                ***REMOVED***
+                  "expression": ***REMOVED***
+                    "argumentTypes": null,
+                    "commonType": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                ***REMOVED***
+                    "id": 12,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": ***REMOVED***
+                      "argumentTypes": null,
+                      "id": 10,
+                      "name": "amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "160:6:0",
+                      "typeDescriptions": ***REMOVED***
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                    ***REMOVED***
+                ***REMOVED***
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": ***REMOVED***
+                      "argumentTypes": null,
+                      "id": 11,
+                      "name": "conversionRate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "169:14:0",
+                      "typeDescriptions": ***REMOVED***
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                    ***REMOVED***
+                ***REMOVED***
+                    "src": "160:23:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "functionReturnParameters": 9,
+                  "id": 13,
+                  "nodeType": "Return",
+                  "src": "153:30:0"
+              ***REMOVED***
+              ]
+        ***REMOVED***
+            "documentation": null,
+            "id": 15,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convert",
+            "nodeType": "FunctionDefinition",
+            "parameters": ***REMOVED***
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                ***REMOVED***
+                  "constant": false,
+                  "id": 3,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "72:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 2,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+            ***REMOVED***
+                ***REMOVED***
+                  "constant": false,
+                  "id": 5,
+                  "name": "conversionRate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "84:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 4,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "84:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+              ***REMOVED***
+              ],
+              "src": "71:33:0"
+        ***REMOVED***
+            "returnParameters": ***REMOVED***
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [
+                ***REMOVED***
+                  "constant": false,
+                  "id": 8,
+                  "name": "convertedAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "126:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 7,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "126:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+              ***REMOVED***
+              ],
+              "src": "125:22:0"
+        ***REMOVED***
+            "scope": 16,
+            "src": "55:132:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+        ***REMOVED***
+        ],
+        "scope": 17,
+        "src": "34:155:0"
+    ***REMOVED***
+    ],
+    "src": "0:190:0"
+***REMOVED***
+  "legacyAST": ***REMOVED***
+    "absolutePath": "/C/Users/vatsal/Desktop/hackinfinity/hack-infinity/contracts/ConvertLib.sol",
+    "exportedSymbols": ***REMOVED***
+      "ConvertLib": [
+        16
+      ]
+***REMOVED***
+    "id": 17,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      ***REMOVED***
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+  ***REMOVED***
+      ***REMOVED***
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 16,
+        "linearizedBaseContracts": [
+          16
+        ],
+        "name": "ConvertLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          ***REMOVED***
+            "body": ***REMOVED***
+              "id": 14,
+              "nodeType": "Block",
+              "src": "149:38:0",
+              "statements": [
+                ***REMOVED***
+                  "expression": ***REMOVED***
+                    "argumentTypes": null,
+                    "commonType": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                ***REMOVED***
+                    "id": 12,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": ***REMOVED***
+                      "argumentTypes": null,
+                      "id": 10,
+                      "name": "amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "160:6:0",
+                      "typeDescriptions": ***REMOVED***
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                    ***REMOVED***
+                ***REMOVED***
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": ***REMOVED***
+                      "argumentTypes": null,
+                      "id": 11,
+                      "name": "conversionRate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5,
+                      "src": "169:14:0",
+                      "typeDescriptions": ***REMOVED***
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                    ***REMOVED***
+                ***REMOVED***
+                    "src": "160:23:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "functionReturnParameters": 9,
+                  "id": 13,
+                  "nodeType": "Return",
+                  "src": "153:30:0"
+              ***REMOVED***
+              ]
+        ***REMOVED***
+            "documentation": null,
+            "id": 15,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "convert",
+            "nodeType": "FunctionDefinition",
+            "parameters": ***REMOVED***
+              "id": 6,
+              "nodeType": "ParameterList",
+              "parameters": [
+                ***REMOVED***
+                  "constant": false,
+                  "id": 3,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "72:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 2,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "72:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+            ***REMOVED***
+                ***REMOVED***
+                  "constant": false,
+                  "id": 5,
+                  "name": "conversionRate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "84:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 4,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "84:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+              ***REMOVED***
+              ],
+              "src": "71:33:0"
+        ***REMOVED***
+            "returnParameters": ***REMOVED***
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [
+                ***REMOVED***
+                  "constant": false,
+                  "id": 8,
+                  "name": "convertedAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15,
+                  "src": "126:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": ***REMOVED***
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+              ***REMOVED***
+                  "typeName": ***REMOVED***
+                    "id": 7,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "126:4:0",
+                    "typeDescriptions": ***REMOVED***
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                  ***REMOVED***
+              ***REMOVED***
+                  "value": null,
+                  "visibility": "internal"
+              ***REMOVED***
+              ],
+              "src": "125:22:0"
+        ***REMOVED***
+            "scope": 16,
+            "src": "55:132:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+        ***REMOVED***
+        ],
+        "scope": 17,
+        "src": "34:155:0"
+    ***REMOVED***
+    ],
+    "src": "0:190:0"
+***REMOVED***
+  "compiler": ***REMOVED***
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+***REMOVED***
+  "networks": ***REMOVED******REMOVED***,
+  "schemaVersion": "3.0.21",
+  "updatedAt": "2020-02-08T05:06:06.840Z",
+  "devdoc": ***REMOVED***
+    "methods": ***REMOVED******REMOVED***
+***REMOVED***
+  "userdoc": ***REMOVED***
+    "methods": ***REMOVED******REMOVED***
+***REMOVED***
+***REMOVED***
