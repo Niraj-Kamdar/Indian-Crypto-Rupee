@@ -2812,7 +2812,7 @@
 ***REMOVED***
   "networks": ***REMOVED******REMOVED***,
   "schemaVersion": "3.0.21",
-  "updatedAt": "2020-02-08T05:06:06.843Z",
+  "updatedAt": "2020-02-08T10:44:09.410Z",
   "devdoc": ***REMOVED***
     "details": "The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of \"user permissions\".",
     "methods": ***REMOVED***

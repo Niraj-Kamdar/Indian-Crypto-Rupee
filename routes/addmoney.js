@@ -78,6 +78,7 @@ router.post("/", (req, res) => ***REMOVED***
 ***REMOVED***);
 
 router.post("/success", (req, res) => ***REMOVED***
+  res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
   let paytmChecksum = "";
   let paytmParams = ***REMOVED******REMOVED***;
   const ***REMOVED***
@@ -136,20 +137,22 @@ router.post("/success", (req, res) => ***REMOVED***
     ***REMOVED***
       // Update the balance of etherum wallet
       const ***REMOVED*** publicKey ***REMOVED*** = docs;
-      web3Controls.mint(web3Controls.acc, publicKey, TXNAMOUNT).then(() => ***REMOVED***
-        const balance = 0;
-        web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
-          balance = val;
-          User.findByIdAndUpdate(
-            UserToken,
-            ***REMOVED*** balance ***REMOVED***,
-            ***REMOVED*** new: true ***REMOVED***,
-            (err, docs2) => ***REMOVED***
-              res.render("success");
-          ***REMOVED***
-          );
+      web3Controls
+        .mint(web3Controls.acc, publicKey, parseInt(TXNAMOUNT))
+        .then(() => ***REMOVED***
+          let balance = 0;
+          web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
+            balance = val;
+            User.findByIdAndUpdate(
+              UserToken,
+              ***REMOVED*** balance ***REMOVED***,
+              ***REMOVED*** new: true ***REMOVED***,
+              (err, docs2) => ***REMOVED***
+                return res.redirect("/");
+            ***REMOVED***
+            );
+        ***REMOVED***);
       ***REMOVED***);
-    ***REMOVED***);
   ***REMOVED***);
 ***REMOVED*** else ***REMOVED***
     return res.redirect("/dashboard");

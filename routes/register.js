@@ -50,7 +50,6 @@ router.post("/", checkUser, (req, res) => ***REMOVED***
     .save()
     .then(docs => ***REMOVED***
       res.cookie(`UserToken`, docs._id);
-
       return res.redirect("/dashboard");
   ***REMOVED***)
     .catch(err => ***REMOVED***

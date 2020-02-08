@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const User = require("../models/user");
-const Web3 = require("web3");
 
 const checkUser = (req, res, next) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
