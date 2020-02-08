@@ -9,7 +9,8 @@ const userSchema = new Schema(***REMOVED***
   password: String,
   mobile: Number,
   balance: ***REMOVED*** type: Number, default: 0.0 ***REMOVED***,
-  data: String
+  publicKey: String,
+  privateKey: String
 ***REMOVED***);
 
 module.exports = mongoose.model(`User`, userSchema);

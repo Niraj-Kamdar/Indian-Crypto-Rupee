@@ -7,7 +7,7 @@ const SECRET_KEY = config.get(`COOKIES.SECRET_KEY`);
 const URL = config.get(`SERVER.URL`);
 const MID = config.get("PAYMENT.MID");
 const MKEY = config.get("PAYMENT.MKEY");
-
+const ***REMOVED*** web3Controls ***REMOVED*** = require("../ethereumControls/web3");
 router.post("/", (req, res) => ***REMOVED***
   const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
   User.findById(UserToken, (err, docs) => ***REMOVED***
@@ -128,7 +128,26 @@ router.post("/success", (req, res) => ***REMOVED***
     paytmChecksum
   );
   if (isValidChecksum || STATUS == "TXN_SUCCESS") ***REMOVED***
-    return res.render("success");
+    const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
+    User.findById(UserToken, (err, docs) => ***REMOVED***
+      if (err) ***REMOVED***
+        return res.redirect("/");
+    ***REMOVED***
+      // Update the balance of etherum wallet
+      const ***REMOVED*** publicKey ***REMOVED*** = docs;
+      const balance = 0;
+      web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
+        balance = val;
+        User.findByIdAndUpdate(
+          UserToken,
+          ***REMOVED*** balance ***REMOVED***,
+          ***REMOVED*** new: true ***REMOVED***,
+          (err, docs2) => ***REMOVED***
+            res.render("success");
+        ***REMOVED***
+        );
+    ***REMOVED***);
+  ***REMOVED***);
 ***REMOVED*** else ***REMOVED***
     return res.redirect("/dashboard");
 ***REMOVED***
