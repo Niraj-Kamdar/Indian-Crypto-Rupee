@@ -151,7 +151,7 @@ router.post("/success", (req, res) => ***REMOVED***
     ***REMOVED***);
   ***REMOVED***);
 ***REMOVED*** else ***REMOVED***
-    res.redirect("/dashboard");
+    return res.redirect("/dashboard");
 ***REMOVED***
 ***REMOVED***);
 

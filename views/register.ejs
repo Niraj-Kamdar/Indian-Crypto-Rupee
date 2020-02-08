@@ -20,7 +20,7 @@
         style="background-color: #303030; padding-left: 40px; padding-top: 10px; padding-bottom: 10px;"
       >
         <img
-          src="./ICR.svg"
+          src="./images/ICR.svg"
           alt=""
           height="99vh"
           style="background-color: white;"
@@ -37,32 +37,42 @@
         <%= error %>
       </div>
       <% ***REMOVED*** %>
-      <div class="container-fluid bg-1" style="height: 85vh;">
-        <form action="/register" method="POST">
-          <label for="name">Name :</label>
-          <input type="text" name="name" class="btn-new bg-2" />
-          <br />
-          <label for="email">Email :</label>
-          <br />
-          <input type="email" name="email" class="btn-new bg-2" />
-          <br />
-          <label for="username">Username :</label>
-          <br />
-          <input type="text" name="username" class="btn-new bg-2" />
-          <br />
-          <label for="password">Password :</label>
-          <br />
-          <input type="password" name="password" class="btn-new bg-2" />
-          <br />
-          <label for="mobile">Mobile :</label>
-          <br />
-          <input type="text" name="mobile" class="btn-new bg-2" />
-          <br />
-          <br />
-          <div class="d-flex m-auto">
-            <button class="btn-new bg-2 mb-2">Go to Dashboard</button>
-          </div>
-        </form>
+      <div class="container-fluid bg-1" style="height: 100%;">
+        <div class="container">
+          <form action="/register" method="POST">
+            <label for="name">Name :</label>
+            <input type="text" name="name" class="btn-new bg-2" />
+            <br />
+            <label for="email">Email :</label>
+            <br />
+            <input type="email" name="email" class="btn-new bg-2" />
+            <br />
+            <label for="username">Username :</label>
+            <br />
+            <input type="text" name="username" class="btn-new bg-2" />
+            <br />
+            <label for="password">Password :</label>
+            <br />
+            <input type="password" name="password" class="btn-new bg-2" />
+            <br />
+            <label for="mobile">Mobile :</label>
+            <br />
+            <input type="text" name="mobile" class="btn-new bg-2" />
+            <br />
+            <label for="publicKey">Public Key :</label>
+            <br />
+            <input type="text" name="publicKey" class="btn-new bg-2" />
+            <br />
+            <label for="privateKey">Private Key :</label>
+            <br />
+            <input type="text" name="privateKey" class="btn-new bg-2" />
+            <br />
+            <br />
+            <div class="d-flex m-auto" style="width: 250px;">
+              <button class="btn-new bg-2 mb-2">Go to Dashboard</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>
