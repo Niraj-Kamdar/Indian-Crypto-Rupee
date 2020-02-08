@@ -33,15 +33,17 @@ const addUser = (owner, user) => ***REMOVED***
   ***REMOVED***);
 ***REMOVED***;
 
-const mint = (owner, user, amount) => ***REMOVED***
-  const txObject = ***REMOVED***
-    from: owner,
-    to: conAddress,
-    data: contract.methods.mint(user, amount).encodeABI()
-***REMOVED***;
-  web3.eth.sendTransaction(txObject).catch(e => ***REMOVED***
+const mint = async (owner, user, amount) => ***REMOVED***
+  try ***REMOVED***
+    const txObject = ***REMOVED***
+      from: owner,
+      to: conAddress,
+      data: contract.methods.mint(user, amount).encodeABI()
+  ***REMOVED***;
+    await web3.eth.sendTransaction(txObject);
+***REMOVED*** catch (e) ***REMOVED***
     throw new Error(e);
-***REMOVED***);
+***REMOVED***
 ***REMOVED***;
 
 const total_Supply = async () => ***REMOVED***

@@ -45,6 +45,6 @@ app.get("/", checkUser, (req, res) => ***REMOVED***
   res.render("index");
 ***REMOVED***);
 
-app.listen(3000, (req, res) => ***REMOVED***
+app.listen(2410, (req, res) => ***REMOVED***
   console.log("Hello World");
 ***REMOVED***);

@@ -135,17 +135,19 @@ router.post("/success", (req, res) => ***REMOVED***
     ***REMOVED***
       // Update the balance of etherum wallet
       const ***REMOVED*** publicKey ***REMOVED*** = docs;
-      const balance = 0;
-      web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
-        balance = val;
-        User.findByIdAndUpdate(
-          UserToken,
-          ***REMOVED*** balance ***REMOVED***,
-          ***REMOVED*** new: true ***REMOVED***,
-          (err, docs2) => ***REMOVED***
-            res.render("success");
-        ***REMOVED***
-        );
+      web3Controls.mint(web3Controls.acc, publicKey, TXNAMOUNT).then(() => ***REMOVED***
+        const balance = 0;
+        web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
+          balance = val;
+          User.findByIdAndUpdate(
+            UserToken,
+            ***REMOVED*** balance ***REMOVED***,
+            ***REMOVED*** new: true ***REMOVED***,
+            (err, docs2) => ***REMOVED***
+              res.render("success");
+          ***REMOVED***
+          );
+      ***REMOVED***);
     ***REMOVED***);
   ***REMOVED***);
 ***REMOVED*** else ***REMOVED***
