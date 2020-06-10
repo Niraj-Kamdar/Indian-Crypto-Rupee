@@ -5,7 +5,7 @@ pragma solidity >=0.5.0 <0.6.0;
 * @dev The Ownable contract has an owner address, and provides basic authorization control
 * functions, this simplifies the implementation of "user permissions".
 */
-contract Ownable ***REMOVED***
+contract Ownable {
   address private _owner;
 
   event OwnershipTransferred(
@@ -17,32 +17,32 @@ contract Ownable ***REMOVED***
   * @dev The Ownable constructor sets the original `owner` of the contract to the sender
   * account.
   */
-  constructor() internal ***REMOVED***
+  constructor() internal {
     _owner = msg.sender;
     emit OwnershipTransferred(address(0), _owner);
-***REMOVED***
+  }
 
   /**
   * @return the address of the owner.
   */
-  function owner() public view returns(address) ***REMOVED***
+  function owner() public view returns(address) {
     return _owner;
-***REMOVED***
+  }
 
   /**
   * @dev Throws if called by any account other than the owner.
   */
-  modifier onlyOwner() ***REMOVED***
+  modifier onlyOwner() {
     require(isOwner());
     _;
-***REMOVED***
+  }
 
   /**
   * @return true if `msg.sender` is the owner of the contract.
   */
-  function isOwner() public view returns(bool) ***REMOVED***
+  function isOwner() public view returns(bool) {
     return msg.sender == _owner;
-***REMOVED***
+  }
 
   /**
   * @dev Allows the current owner to relinquish control of the contract.
@@ -50,26 +50,26 @@ contract Ownable ***REMOVED***
   * It will not be possible to call the functions with the `onlyOwner`
   * modifier anymore.
   */
-  function renounceOwnership() public onlyOwner ***REMOVED***
+  function renounceOwnership() public onlyOwner {
     emit OwnershipTransferred(_owner, address(0));
     _owner = address(0);
-***REMOVED***
+  }
 
   /**
   * @dev Allows the current owner to transfer control of the contract to a newOwner.
   * @param newOwner The address to transfer ownership to.
   */
-  function transferOwnership(address newOwner) public onlyOwner ***REMOVED***
+  function transferOwnership(address newOwner) public onlyOwner {
     _transferOwnership(newOwner);
-***REMOVED***
+  }
 
   /**
   * @dev Transfers control of the contract to a newOwner.
   * @param newOwner The address to transfer ownership to.
   */
-  function _transferOwnership(address newOwner) internal ***REMOVED***
+  function _transferOwnership(address newOwner) internal {
     require(newOwner != address(0));
     emit OwnershipTransferred(_owner, newOwner);
     _owner = newOwner;
-***REMOVED***
-***REMOVED***
+  }
+}

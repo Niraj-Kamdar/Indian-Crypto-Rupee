@@ -1,9 +1,9 @@
-module.exports = ***REMOVED***
-  paytm_config: ***REMOVED***
+module.exports = {
+  paytm_config: {
 		MID: '',
 		WEBSITE: '',
     CHANNEL_ID: '',
     INDUSTRY_TYPE_ID: '',
     MERCHANT_KEY : ''
-	***REMOVED***
-***REMOVED***
+	}
+}

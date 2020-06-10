@@ -1,9 +1,9 @@
-***REMOVED***
+{
   "name": "hack-infinity",
   "version": "1.0.0",
   "description": "HI2020",
   "main": "index.js",
-  "dependencies": ***REMOVED***
+  "dependencies": {
     "config": "^3.2.5",
     "cookie-parser": "^1.4.4",
     "ejs": "^3.0.1",
@@ -14,19 +14,19 @@
     "nodemailer": "^6.4.2",
     "truffle": "^5.1.12",
     "web3": "^1.2.6"
-***REMOVED***
-  "devDependencies": ***REMOVED******REMOVED***,
-  "scripts": ***REMOVED***
+  },
+  "devDependencies": {},
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-***REMOVED***
-  "repository": ***REMOVED***
+  },
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/meet2410shah/hack-infinity.git"
-***REMOVED***
+  },
   "author": "",
   "license": "ISC",
-  "bugs": ***REMOVED***
+  "bugs": {
     "url": "https://github.com/meet2410shah/hack-infinity/issues"
-***REMOVED***
+  },
   "homepage": "https://github.com/meet2410shah/hack-infinity#readme"
-***REMOVED***
+}

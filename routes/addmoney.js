@@ -7,29 +7,29 @@ const SECRET_KEY = config.get(`COOKIES.SECRET_KEY`);
 const URL = config.get(`SERVER.URL`);
 const MID = config.get("PAYMENT.MID");
 const MKEY = config.get("PAYMENT.MKEY");
-const ***REMOVED*** web3Controls ***REMOVED*** = require("../ethereumControls/web3");
+const { web3Controls } = require("../ethereumControls/web3");
 const web3 = web3Controls.web3;
-router.post("/", (req, res) => ***REMOVED***
-  const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
-  User.findById(UserToken, (err, docs) => ***REMOVED***
-    if (err) ***REMOVED***
+router.post("/", (req, res) => {
+  const { UserToken } = req.cookies;
+  User.findById(UserToken, (err, docs) => {
+    if (err) {
       return res.redirect("/dashboard");
-  ***REMOVED***
-    const ***REMOVED*** addmoney ***REMOVED*** = req.body;
-    if (addmoney <= 0) ***REMOVED***
+    }
+    const { addmoney } = req.body;
+    if (addmoney <= 0) {
       return res.redirect("/dashboard");
-  ***REMOVED***
-    const ***REMOVED*** mobile, email ***REMOVED*** = docs;
+    }
+    const { mobile, email } = docs;
     const myRandom = Math.random() * 10e16;
-    const ORDER_ID = `ICR_$***REMOVED***myRandom***REMOVED***`;
-    const CUST_ID = `ICR_$***REMOVED***myRandom***REMOVED***`;
-    const MOBILE_NO = `$***REMOVED***mobile***REMOVED***`;
-    const EMAIL = `$***REMOVED***email***REMOVED***`;
-    let TXN_AMOUNT = `$***REMOVED***addmoney***REMOVED***`;
-    const CALLBACK_URL = `$***REMOVED***URL***REMOVED***/addmoney/success`;
+    const ORDER_ID = `ICR_${myRandom}`;
+    const CUST_ID = `ICR_${myRandom}`;
+    const MOBILE_NO = `${mobile}`;
+    const EMAIL = `${email}`;
+    let TXN_AMOUNT = `${addmoney}`;
+    const CALLBACK_URL = `${URL}/addmoney/success`;
 
     // Set paytmParams
-    var paytmParams = ***REMOVED***
+    var paytmParams = {
       MID, // Merchannt ID - String (20)
       CHANNEL_ID: "WEB", // String (3) Theme based on the channel
       WEBSITE: "DEFAULT", // String (30)
@@ -41,12 +41,12 @@ router.post("/", (req, res) => ***REMOVED***
       MOBILE_NO, // String (15)
       EMAIL, // String (50)
       CALLBACK_URL
-  ***REMOVED***;
+    };
 
     // Generate CHECKSUMHASH
-    checksum_lib.genchecksum(paytmParams, MKEY, (err, checksum) => ***REMOVED***
+    checksum_lib.genchecksum(paytmParams, MKEY, (err, checksum) => {
       var url = "https://securegw.paytm.in/order/process";
-      res.writeHead(200, ***REMOVED*** "Content-Type": "text/html" ***REMOVED***);
+      res.writeHead(200, { "Content-Type": "text/html" });
       res.write("<html>");
       res.write("<head>");
       res.write("<title>Merchant Checkout Page</title>");
@@ -54,7 +54,7 @@ router.post("/", (req, res) => ***REMOVED***
       res.write("<body>");
       res.write("<center><h1>Please do not refresh this page...</h1></center>");
       res.write('<form method="post" action="' + url + '" name="paytm_form">');
-      for (var x in paytmParams) ***REMOVED***
+      for (var x in paytmParams) {
         res.write(
           '<input type="hidden" name="' +
             x +
@@ -62,7 +62,7 @@ router.post("/", (req, res) => ***REMOVED***
             paytmParams[x] +
             '">'
         );
-    ***REMOVED***
+      }
       res.write(
         '<input type="hidden" name="CHECKSUMHASH" value="' + checksum + '">'
       );
@@ -73,15 +73,15 @@ router.post("/", (req, res) => ***REMOVED***
       res.write("</body>");
       res.write("</html>");
       res.end();
-  ***REMOVED***);
-***REMOVED***);
-***REMOVED***);
+    });
+  });
+});
 
-router.post("/success", (req, res) => ***REMOVED***
+router.post("/success", (req, res) => {
   res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
   let paytmChecksum = "";
-  let paytmParams = ***REMOVED******REMOVED***;
-  const ***REMOVED***
+  let paytmParams = {};
+  const {
     CURRENCY,
     GATEWAYNAME,
     RESPMSG,
@@ -98,8 +98,8 @@ router.post("/success", (req, res) => ***REMOVED***
     MOBILE_NO,
     TXNDATE,
     CHECKSUMHASH
-***REMOVED*** = req.body;
-  received_data = ***REMOVED***
+  } = req.body;
+  received_data = {
     CURRENCY,
     GATEWAYNAME,
     RESPMSG,
@@ -116,47 +116,47 @@ router.post("/success", (req, res) => ***REMOVED***
     MOBILE_NO,
     TXNDATE,
     CHECKSUMHASH
-***REMOVED***;
-  for (var key in received_data) ***REMOVED***
-    if (key == "CHECKSUMHASH") ***REMOVED***
+  };
+  for (var key in received_data) {
+    if (key == "CHECKSUMHASH") {
       paytmChecksum = received_data[key];
-  ***REMOVED*** else ***REMOVED***
+    } else {
       paytmParams[key] = received_data[key];
-  ***REMOVED***
-***REMOVED***
+    }
+  }
   var isValidChecksum = checksum_lib.verifychecksum(
     paytmParams,
     MKEY,
     paytmChecksum
   );
-  if (isValidChecksum || STATUS == "TXN_SUCCESS") ***REMOVED***
-    const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
-    User.findById(UserToken, (err, docs) => ***REMOVED***
-      if (err) ***REMOVED***
+  if (isValidChecksum || STATUS == "TXN_SUCCESS") {
+    const { UserToken } = req.cookies;
+    User.findById(UserToken, (err, docs) => {
+      if (err) {
         return res.redirect("/");
-    ***REMOVED***
+      }
       // Update the balance of etherum wallet
-      const ***REMOVED*** publicKey ***REMOVED*** = docs;
+      const { publicKey } = docs;
       web3Controls
         .mint(web3Controls.acc, publicKey, parseInt(TXNAMOUNT))
-        .then(() => ***REMOVED***
+        .then(() => {
           let balance = 0;
-          web3Controls.balanceOf(publicKey).then(val => ***REMOVED***
+          web3Controls.balanceOf(publicKey).then(val => {
             balance = val;
             User.findByIdAndUpdate(
               UserToken,
-              ***REMOVED*** balance ***REMOVED***,
-              ***REMOVED*** new: true ***REMOVED***,
-              (err, docs2) => ***REMOVED***
+              { balance },
+              { new: true },
+              (err, docs2) => {
                 return res.redirect("/");
-            ***REMOVED***
+              }
             );
-        ***REMOVED***);
-      ***REMOVED***);
-  ***REMOVED***);
-***REMOVED*** else ***REMOVED***
+          });
+        });
+    });
+  } else {
     return res.redirect("/dashboard");
-***REMOVED***
-***REMOVED***);
+  }
+});
 
 module.exports = router;

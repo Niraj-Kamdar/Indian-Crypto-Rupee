@@ -5,7 +5,7 @@ const checksum_lib = require(`../controller/paytm/checksum`);
 
 // Required 3rd Party Modules
 const nodemailer = require(`nodemailer`);
-const ***REMOVED*** google ***REMOVED*** = require(`googleapis`);
+const { google } = require(`googleapis`);
 const Oauth2 = google.auth.OAuth2;
 
 // Configuration Setup
@@ -19,33 +19,33 @@ const MKEY = config.get(`PAYMENT.MKEY`);
 
 // OAuth2 CLient Setup
 const oauth2Client = new Oauth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
-oauth2Client.setCredentials(***REMOVED***
+oauth2Client.setCredentials({
   refresh_token: REFRESH_TOKEN
-***REMOVED***);
+});
 
-router.post("/", (req, res) => ***REMOVED***
-  const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
-  if (!UserToken) ***REMOVED***
+router.post("/", (req, res) => {
+  const { UserToken } = req.cookies;
+  if (!UserToken) {
     return res.redirect("/");
-***REMOVED***
-  User.findById(UserToken, (err, docs) => ***REMOVED***
-    const ***REMOVED*** getmoney ***REMOVED*** = req.body;
+  }
+  User.findById(UserToken, (err, docs) => {
+    const { getmoney } = req.body;
     const accessToken = oauth2Client.getAccessToken();
-    let transporter = nodemailer.createTransport(***REMOVED***
+    let transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: ***REMOVED***
+      auth: {
         type: "OAuth2",
         user: EMAIL,
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
         accessToken: accessToken
-    ***REMOVED***
-  ***REMOVED***);
+      }
+    });
     transporter.sendMail(
-      ***REMOVED***
-        from: `Team ICR <$***REMOVED***EMAIL***REMOVED***>`,
-        to: `$***REMOVED***docs.email***REMOVED***`,
+      {
+        from: `Team ICR <${EMAIL}>`,
+        to: `${docs.email}`,
         subject: "Successful Payment",
         html: `
               <div style="padding: 5%; box-shadow: 0px 0px 2px 5px #aaa">
@@ -55,13 +55,13 @@ router.post("/", (req, res) => ***REMOVED***
                   </div>
                   <div style="background-color: #EFEFED; padding: 5%">
                       <p style="font-size: 14px">
-                          Dear $***REMOVED***docs.name***REMOVED***, <br>
+                          Dear ${docs.name}, <br>
                           <br>
                           We’ll soon send your money to your account.
                           <br>
-                          <b>Account Username :</b> $***REMOVED***docs.username***REMOVED***
+                          <b>Account Username :</b> ${docs.username}
                           <br>
-                          <b>Amount :</b> ₹ $***REMOVED***getmoney***REMOVED***/-
+                          <b>Amount :</b> ₹ ${getmoney}/-
                           <br>
                           <p>If you have not done this transection then mail us on the same to stop it.</p>
                           <br>
@@ -83,31 +83,31 @@ router.post("/", (req, res) => ***REMOVED***
               </div>
               `,
         attachments: [
-          ***REMOVED***
+          {
             filename: "ICR.png",
             path: "./public/images/ICR.png",
             cid: "synapse"
-      ***REMOVED***
-          ***REMOVED***
+          },
+          {
             filename: "fb.png",
             path: "./public/images/fb.png",
             cid: "fb"
-      ***REMOVED***
-          ***REMOVED***
+          },
+          {
             filename: "insta.png",
             path: "./public/images/insta.png",
             cid: "insta"
-        ***REMOVED***
+          }
         ]
-  ***REMOVED***
-      (err, info) => ***REMOVED***
-        if (err) ***REMOVED***
-          return res.send(`ERROR $***REMOVED***err***REMOVED***`);
-      ***REMOVED***
+      },
+      (err, info) => {
+        if (err) {
+          return res.send(`ERROR ${err}`);
+        }
         return res.send(`success`);
-    ***REMOVED***
+      }
     );
-***REMOVED***);
-***REMOVED***);
+  });
+});
 
 module.exports = router;

@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 
 // Express App Middleware
 app.use(express.json());
-app.use(express.urlencoded(***REMOVED*** extended: true ***REMOVED***));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`public`));
 app.use(cookieParser());
 
@@ -35,25 +35,25 @@ app.use("/addmoney", addmoney);
 app.use("/getmoney", getmoney);
 app.use("/transfer", transfer);
 
-const checkUser = (req, res, next) => ***REMOVED***
-  const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
-  if (!UserToken) ***REMOVED***
+const checkUser = (req, res, next) => {
+  const { UserToken } = req.cookies;
+  if (!UserToken) {
     return next();
-***REMOVED***
-  User.findById(UserToken, (err, docs) => ***REMOVED***
-    if (err) ***REMOVED***
+  }
+  User.findById(UserToken, (err, docs) => {
+    if (err) {
       res.cookie("UserToken", "");
       return next();
-  ***REMOVED***
+    }
     res.locals.user = docs;
     res.redirect("/dashboard");
-***REMOVED***);
-***REMOVED***;
+  });
+};
 
-app.get("/", checkUser, (req, res) => ***REMOVED***
+app.get("/", checkUser, (req, res) => {
   res.render("index");
-***REMOVED***);
+});
 
-app.listen(2410, (req, res) => ***REMOVED***
+app.listen(2410, (req, res) => {
   console.log("Server has started on port 3000");
-***REMOVED***);
+});

@@ -11,10 +11,10 @@ mongoose.set(`useFindAndModify`, false);
 mongoose.set(`useCreateIndex`, true);
 mongoose.set(`useUnifiedTopology`, true);
 mongoose
-  .connect(CONNECTION_URL, ***REMOVED*** useNewUrlParser: true ***REMOVED***)
-  .then(() => ***REMOVED***
+  .connect(CONNECTION_URL, { useNewUrlParser: true })
+  .then(() => {
     console.log("Connection Successful:", CONNECTION_URL);
-***REMOVED***)
-  .catch(err => ***REMOVED***
+  })
+  .catch(err => {
     console.log("ERROR:", err);
-***REMOVED***);
+  });

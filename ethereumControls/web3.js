@@ -8,167 +8,167 @@ const contract = new web3.eth.Contract(contractAbi, conAddress);
 
 const acc = "0xF52b492a44481a8bAF7D67526Ed97f83309a86DB";
 
-const burn = async (owner, user, price) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const burn = async (owner, user, price) => {
+  try {
+    const txObject = {
       from: owner,
       to: conAddress,
       data: contract.methods.burn(user, price).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const addUser = async (owner, user) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const addUser = async (owner, user) => {
+  try {
+    const txObject = {
       from: owner,
       to: conAddress,
       data: contract.methods.addUser(user).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const mint = async (owner, user, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const mint = async (owner, user, amount) => {
+  try {
+    const txObject = {
       from: owner,
       to: conAddress,
       data: contract.methods.mint(user, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const total_Supply = async () => ***REMOVED***
+const total_Supply = async () => {
   let supply = 0;
-  try ***REMOVED***
+  try {
     supply = await contract.methods.totalSupply().call();
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
+  }
   return supply;
-***REMOVED***;
+};
 
-const name = async () => ***REMOVED***
+const name = async () => {
   let name = "";
-  try ***REMOVED***
+  try {
     name = await contract.methods.name().call();
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED*** finally ***REMOVED***
+  } finally {
     return name;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const symbol = async () => ***REMOVED***
+const symbol = async () => {
   let name = "";
-  try ***REMOVED***
+  try {
     name = await contract.methods.symbol().call();
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED*** finally ***REMOVED***
+  } finally {
     return name;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const allowance = async (owner, user) => ***REMOVED***
+const allowance = async (owner, user) => {
   let allowance = "";
-  try ***REMOVED***
+  try {
     allowance = await contract.methods.allowance(owner, user).call();
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED*** finally ***REMOVED***
+  } finally {
     return allowance;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const approve = async (sender, user, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const approve = async (sender, user, amount) => {
+  try {
+    const txObject = {
       from: sender,
       to: conAddress,
       data: contract.methods.approve(user, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const balanceOf = async user => ***REMOVED***
+const balanceOf = async user => {
   let balance = "";
-  try ***REMOVED***
+  try {
     balance = await contract.methods.balanceOf(user).call();
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED*** finally ***REMOVED***
+  } finally {
     return balance;
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const decreaseAllowance = async (sender, spender, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const decreaseAllowance = async (sender, spender, amount) => {
+  try {
+    const txObject = {
       from: sender,
       to: conAddress,
       data: contract.methods.decreaseAllowance(spender, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const increaseAllowance = async (sender, spender, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const increaseAllowance = async (sender, spender, amount) => {
+  try {
+    const txObject = {
       from: sender,
       to: conAddress,
       data: contract.methods.increaseAllowance(spender, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const transferFrom = async (sender, receiver, spender, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const transferFrom = async (sender, receiver, spender, amount) => {
+  try {
+    const txObject = {
       from: spender,
       to: conAddress,
       data: contract.methods.transferFrom(sender, receiver, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-const transfer = async (sender, receiver, amount) => ***REMOVED***
-  try ***REMOVED***
-    const txObject = ***REMOVED***
+const transfer = async (sender, receiver, amount) => {
+  try {
+    const txObject = {
       from: sender,
       to: conAddress,
       data: contract.methods.transfer(receiver, amount).encodeABI()
-  ***REMOVED***;
+    };
     await web3.eth.sendTransaction(txObject);
-***REMOVED*** catch (e) ***REMOVED***
+  } catch (e) {
     throw new Error(e);
-***REMOVED***
-***REMOVED***;
+  }
+};
 
-// export ***REMOVED*** web3 ***REMOVED***;
+// export { web3 };
 
-module.exports.web3Controls = ***REMOVED***
+module.exports.web3Controls = {
   web3,
   transfer,
   transferFrom,
@@ -186,4 +186,4 @@ module.exports.web3Controls = ***REMOVED***
   acc,
   contract,
   conAddress
-***REMOVED***;
+};

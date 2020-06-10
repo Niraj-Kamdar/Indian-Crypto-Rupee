@@ -6,34 +6,34 @@ var crypto = require("crypto");
 
 //mandatory flag: when it set, only mandatory parameters are added to checksum
 
-function paramsToString(params, mandatoryflag) ***REMOVED***
+function paramsToString(params, mandatoryflag) {
   var data = "";
   var tempKeys = Object.keys(params);
   tempKeys.sort();
-  tempKeys.forEach(function(key) ***REMOVED***
-    if (params[key]) ***REMOVED***
+  tempKeys.forEach(function(key) {
+    if (params[key]) {
       var n = params[key].includes("REFUND");
       var m = params[key].includes("|");
-      if (n == true) ***REMOVED***
+      if (n == true) {
         params[key] = "";
-    ***REMOVED***
-      if (m == true) ***REMOVED***
+      }
+      if (m == true) {
         params[key] = "";
-    ***REMOVED***
-  ***REMOVED***
-    if (key !== "CHECKSUMHASH") ***REMOVED***
+      }
+    }
+    if (key !== "CHECKSUMHASH") {
       if (params[key] === "null") params[key] = "";
-      if (!mandatoryflag || mandatoryParams.indexOf(key) !== -1) ***REMOVED***
+      if (!mandatoryflag || mandatoryParams.indexOf(key) !== -1) {
         data += params[key] + "|";
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***);
+      }
+    }
+  });
   return data;
-***REMOVED***
+}
 
-function genchecksum(params, key, cb) ***REMOVED***
+function genchecksum(params, key, cb) {
   var data = paramsToString(params);
-  crypt.gen_salt(4, function(err, salt) ***REMOVED***
+  crypt.gen_salt(4, function(err, salt) {
     var sha256 = crypto
       .createHash("sha256")
       .update(data + salt)
@@ -41,10 +41,10 @@ function genchecksum(params, key, cb) ***REMOVED***
     var check_sum = sha256 + salt;
     var encrypted = crypt.encrypt(check_sum, key);
     cb(undefined, encrypted);
-***REMOVED***);
-***REMOVED***
-function genchecksumbystring(params, key, cb) ***REMOVED***
-  crypt.gen_salt(4, function(err, salt) ***REMOVED***
+  });
+}
+function genchecksumbystring(params, key, cb) {
+  crypt.gen_salt(4, function(err, salt) {
     var sha256 = crypto
       .createHash("sha256")
       .update(params + "|" + salt)
@@ -55,14 +55,14 @@ function genchecksumbystring(params, key, cb) ***REMOVED***
     var CHECKSUMHASH = encodeURIComponent(encrypted);
     CHECKSUMHASH = encrypted;
     cb(undefined, CHECKSUMHASH);
-***REMOVED***);
-***REMOVED***
+  });
+}
 
-function verifychecksum(params, key, checksumhash) ***REMOVED***
+function verifychecksum(params, key, checksumhash) {
   var data = paramsToString(params, false);
 
   //TODO: after PG fix on thier side remove below two lines
-  if (typeof checksumhash !== "undefined") ***REMOVED***
+  if (typeof checksumhash !== "undefined") {
     checksumhash = checksumhash.replace("\n", "");
     checksumhash = checksumhash.replace("\r", "");
     var temp = decodeURIComponent(checksumhash);
@@ -73,19 +73,19 @@ function verifychecksum(params, key, checksumhash) ***REMOVED***
       .createHash("sha256")
       .update(data + salt)
       .digest("hex");
-    if (hash === sha256) ***REMOVED***
+    if (hash === sha256) {
       return true;
-  ***REMOVED*** else ***REMOVED***
+    } else {
       util.log("checksum is wrong");
       return false;
-  ***REMOVED***
-***REMOVED*** else ***REMOVED***
+    }
+  } else {
     util.log("checksum not found");
     return false;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-function verifychecksumbystring(params, key, checksumhash) ***REMOVED***
+function verifychecksumbystring(params, key, checksumhash) {
   var checksum = crypt.decrypt(checksumhash, key);
   var salt = checksum.substr(checksum.length - 4);
   var sha256 = checksum.substr(0, checksum.length - 4);
@@ -93,17 +93,17 @@ function verifychecksumbystring(params, key, checksumhash) ***REMOVED***
     .createHash("sha256")
     .update(params + "|" + salt)
     .digest("hex");
-  if (hash === sha256) ***REMOVED***
+  if (hash === sha256) {
     return true;
-***REMOVED*** else ***REMOVED***
+  } else {
     util.log("checksum is wrong");
     return false;
-***REMOVED***
-***REMOVED***
+  }
+}
 
-function genchecksumforrefund(params, key, cb) ***REMOVED***
+function genchecksumforrefund(params, key, cb) {
   var data = paramsToStringrefund(params);
-  crypt.gen_salt(4, function(err, salt) ***REMOVED***
+  crypt.gen_salt(4, function(err, salt) {
     var sha256 = crypto
       .createHash("sha256")
       .update(data + salt)
@@ -112,27 +112,27 @@ function genchecksumforrefund(params, key, cb) ***REMOVED***
     var encrypted = crypt.encrypt(check_sum, key);
     params.CHECKSUM = encodeURIComponent(encrypted);
     cb(undefined, params);
-***REMOVED***);
-***REMOVED***
+  });
+}
 
-function paramsToStringrefund(params, mandatoryflag) ***REMOVED***
+function paramsToStringrefund(params, mandatoryflag) {
   var data = "";
   var tempKeys = Object.keys(params);
   tempKeys.sort();
-  tempKeys.forEach(function(key) ***REMOVED***
+  tempKeys.forEach(function(key) {
     var m = params[key].includes("|");
-    if (m == true) ***REMOVED***
+    if (m == true) {
       params[key] = "";
-  ***REMOVED***
-    if (key !== "CHECKSUMHASH") ***REMOVED***
+    }
+    if (key !== "CHECKSUMHASH") {
       if (params[key] === "null") params[key] = "";
-      if (!mandatoryflag || mandatoryParams.indexOf(key) !== -1) ***REMOVED***
+      if (!mandatoryflag || mandatoryParams.indexOf(key) !== -1) {
         data += params[key] + "|";
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***);
+      }
+    }
+  });
   return data;
-***REMOVED***
+}
 
 module.exports.genchecksum = genchecksum;
 module.exports.verifychecksum = verifychecksum;

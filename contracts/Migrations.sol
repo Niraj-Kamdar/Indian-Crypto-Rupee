@@ -1,23 +1,23 @@
 pragma solidity >=0.4.22 <0.7.0;
 
-contract Migrations ***REMOVED***
+contract Migrations {
   address public owner;
   uint256 public last_completed_migration;
 
-  modifier restricted() ***REMOVED***
+  modifier restricted() {
     if (msg.sender == owner) _;
-***REMOVED***
+  }
 
-  constructor() public ***REMOVED***
+  constructor() public {
     owner = msg.sender;
-***REMOVED***
+  }
 
-  function setCompleted(uint completed) public restricted ***REMOVED***
+  function setCompleted(uint completed) public restricted {
     last_completed_migration = completed;
-***REMOVED***
+  }
 
-  function upgrade(address new_address) public restricted ***REMOVED***
+  function upgrade(address new_address) public restricted {
     Migrations upgraded = Migrations(new_address);
     upgraded.setCompleted(last_completed_migration);
-***REMOVED***
-***REMOVED***
+  }
+}

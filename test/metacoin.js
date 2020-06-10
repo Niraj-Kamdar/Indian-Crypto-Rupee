@@ -1,31 +1,31 @@
 const MetaCoin = artifacts.require("MetaCoin");
 
-contract('MetaCoin', function(accounts) ***REMOVED***
-  it("should put 10000 MetaCoin in the first account", function() ***REMOVED***
-    return MetaCoin.deployed().then(function(instance) ***REMOVED***
+contract('MetaCoin', function(accounts) {
+  it("should put 10000 MetaCoin in the first account", function() {
+    return MetaCoin.deployed().then(function(instance) {
       return instance.getBalance.call(accounts[0]);
-  ***REMOVED***).then(function(balance) ***REMOVED***
+    }).then(function(balance) {
       assert.equal(balance.valueOf(), 10000, "10000 wasn't in the first account");
-  ***REMOVED***);
-***REMOVED***);
-  it("should call a function that depends on a linked library", function() ***REMOVED***
+    });
+  });
+  it("should call a function that depends on a linked library", function() {
     var meta;
     var metaCoinBalance;
     var metaCoinEthBalance;
 
-    return MetaCoin.deployed().then(function(instance) ***REMOVED***
+    return MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.getBalance.call(accounts[0]);
-  ***REMOVED***).then(function(outCoinBalance) ***REMOVED***
+    }).then(function(outCoinBalance) {
       metaCoinBalance = parseInt(outCoinBalance);
       return meta.getBalanceInEth.call(accounts[0]);
-  ***REMOVED***).then(function(outCoinBalanceEth) ***REMOVED***
+    }).then(function(outCoinBalanceEth) {
       metaCoinEthBalance = parseInt(outCoinBalanceEth);
-  ***REMOVED***).then(function() ***REMOVED***
+    }).then(function() {
       assert.equal(metaCoinEthBalance, 2 * metaCoinBalance, "Library function returned unexpected function, linkage may be broken");
-  ***REMOVED***);
-***REMOVED***);
-  it("should send coin correctly", function() ***REMOVED***
+    });
+  });
+  it("should send coin correctly", function() {
     var meta;
 
     // Get initial balances of first and second account.
@@ -39,25 +39,25 @@ contract('MetaCoin', function(accounts) ***REMOVED***
 
     var amount = 10;
 
-    return MetaCoin.deployed().then(function(instance) ***REMOVED***
+    return MetaCoin.deployed().then(function(instance) {
       meta = instance;
       return meta.getBalance.call(account_one);
-  ***REMOVED***).then(function(balance) ***REMOVED***
+    }).then(function(balance) {
       account_one_starting_balance = parseInt(balance);
       return meta.getBalance.call(account_two);
-  ***REMOVED***).then(function(balance) ***REMOVED***
+    }).then(function(balance) {
       account_two_starting_balance = parseInt(balance);
-      return meta.sendCoin(account_two, amount, ***REMOVED***from: account_one***REMOVED***);
-  ***REMOVED***).then(function() ***REMOVED***
+      return meta.sendCoin(account_two, amount, {from: account_one});
+    }).then(function() {
       return meta.getBalance.call(account_one);
-  ***REMOVED***).then(function(balance) ***REMOVED***
+    }).then(function(balance) {
       account_one_ending_balance = parseInt(balance);
       return meta.getBalance.call(account_two);
-  ***REMOVED***).then(function(balance) ***REMOVED***
+    }).then(function(balance) {
       account_two_ending_balance = parseInt(balance);
 
       assert.equal(account_one_ending_balance, account_one_starting_balance - amount, "Amount wasn't correctly taken from the sender");
       assert.equal(account_two_ending_balance, account_two_starting_balance + amount, "Amount wasn't correctly sent to the receiver");
-  ***REMOVED***);
-***REMOVED***);
-***REMOVED***);
+    });
+  });
+});

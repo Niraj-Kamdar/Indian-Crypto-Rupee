@@ -1,49 +1,49 @@
-* ***REMOVED***
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-***REMOVED***
-.color-1 ***REMOVED***
+}
+.color-1 {
   color: #48494b;
-***REMOVED***
-.color-2 ***REMOVED***
+}
+.color-2 {
   color: #9f9f9f;
-***REMOVED***
-.bg-1 ***REMOVED***
+}
+.bg-1 {
   background-color: #48494b;
   color: white;
-***REMOVED***
-.bg-2 ***REMOVED***
+}
+.bg-2 {
   background-color: #9f9f9f;
   color: white;
-***REMOVED***
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 ***REMOVED***
+h6 {
   margin: 0px;
-***REMOVED***
-.btn-new ***REMOVED***
+}
+.btn-new {
   padding: 15px 25px;
   border: none;
   outline: none;
   width: 100%;
   border-radius: 30px;
-***REMOVED***
-.btn-new:hover ***REMOVED***
+}
+.btn-new:hover {
   outline: none;
-***REMOVED***
-.btn-new:focus ***REMOVED***
+}
+.btn-new:focus {
   outline: none;
-***REMOVED***
-a ***REMOVED***
+}
+a {
   text-decoration: none;
-***REMOVED***
-a:hover ***REMOVED***
+}
+a:hover {
   text-decoration: none;
-***REMOVED***
-input::placeholder ***REMOVED***
+}
+input::placeholder {
   color: white;
-***REMOVED***
+}

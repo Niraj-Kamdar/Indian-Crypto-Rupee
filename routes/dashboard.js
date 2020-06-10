@@ -1,42 +1,42 @@
 const router = require("express").Router();
 const User = require("../models/user");
 
-const checkUser = (req, res, next) => ***REMOVED***
-  const ***REMOVED*** UserToken ***REMOVED*** = req.cookies;
-  if (!UserToken) ***REMOVED***
+const checkUser = (req, res, next) => {
+  const { UserToken } = req.cookies;
+  if (!UserToken) {
     return res.redirect("/");
-***REMOVED***
-  User.findById(UserToken, (err, docs) => ***REMOVED***
-    if (err) ***REMOVED***
+  }
+  User.findById(UserToken, (err, docs) => {
+    if (err) {
       return res.redirect("/");
-  ***REMOVED***
+    }
     res.locals.user = docs;
     next();
-***REMOVED***);
-***REMOVED***;
+  });
+};
 
-router.get("/", checkUser, (req, res) => ***REMOVED***
+router.get("/", checkUser, (req, res) => {
   res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
-  const ***REMOVED*** user ***REMOVED*** = res.locals;
-  return res.render("dashboard", ***REMOVED*** user ***REMOVED***);
-***REMOVED***);
+  const { user } = res.locals;
+  return res.render("dashboard", { user });
+});
 
-router.get("/transfer", checkUser, (req, res) => ***REMOVED***
+router.get("/transfer", checkUser, (req, res) => {
   res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
-  const ***REMOVED*** user ***REMOVED*** = res.locals;
-  return res.render("transfer", ***REMOVED*** user ***REMOVED***);
-***REMOVED***);
+  const { user } = res.locals;
+  return res.render("transfer", { user });
+});
 
-router.get("/get-money", checkUser, (req, res) => ***REMOVED***
+router.get("/get-money", checkUser, (req, res) => {
   res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
-  const ***REMOVED*** user ***REMOVED*** = res.locals;
-  return res.render("getmoney", ***REMOVED*** user ***REMOVED***);
-***REMOVED***);
+  const { user } = res.locals;
+  return res.render("getmoney", { user });
+});
 
-router.get("/add-money", checkUser, (req, res) => ***REMOVED***
+router.get("/add-money", checkUser, (req, res) => {
   res.set(`Cache-Control`, `no-cache, no-store, must-revalidate`);
-  const ***REMOVED*** user ***REMOVED*** = res.locals;
-  return res.render("addmoney", ***REMOVED*** user ***REMOVED***);
-***REMOVED***);
+  const { user } = res.locals;
+  return res.render("addmoney", { user });
+});
 
 module.exports = router;

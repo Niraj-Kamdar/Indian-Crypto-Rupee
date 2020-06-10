@@ -32,11 +32,11 @@
           Indian Crypto Rupee
         </h1>
       </div>
-      <% if(error) ***REMOVED*** %>
+      <% if(error) { %>
       <div style="background-color: #F01000; color: white; padding: 10px 20px;">
         <%= error %>
       </div>
-      <% ***REMOVED*** %>
+      <% } %>
       <div class="container-fluid bg-1" style="height: 100%;">
         <div class="container">
           <form action="/register" method="POST">
